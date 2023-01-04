@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import Container from '@mui/material/Container';
-import { Box } from "@mui/system";
 
 import './Calculator.css'
 
 export default function Calculator(){
         const [num, setNum] = useState(0);
         const [oldnum, setOldNum] = useState(0);
-        const [operator, setOperator] = useState(0);
+        const [operator, setOperator] = useState();
 
 
         function inputNum(e){
@@ -49,34 +47,45 @@ export default function Calculator(){
           
             }}
     return (
-        <div>
-        <Box m={5} />
-        <Container maxWidth="xs">
+        <div className="all">
+    
         <div className="wrapper">
-            <Box  m={12}/>
-        
             <h1 className="result">{num}</h1>
+
+            <div className="row">
            <button className="gray-black" onClick={clear}>AC</button>
            <button className="gray-black" onClick={operatorHandler}>+/-</button>
            <button className="gray-black" onClick={porcentage}>%</button>
            <button className="Orange" onClick={hadlerOperator} value={"/"}>/</button>
+           </div>
+
+           <div className="row">
            <button className="gray" onClick={inputNum} value={7}>7</button>
            <button className="gray" onClick={inputNum} value={8}>8</button>
            <button className="gray" onClick={inputNum} value={9}>9</button>
            <button className="Orange" onClick={hadlerOperator} value={"X"}>X</button>
+           </div>
+
+           <div className="row">
            <button className="gray" onClick={inputNum} value={4}>4</button>
            <button className="gray" onClick={inputNum} value={5}>5</button>
            <button className="gray" onClick={inputNum} value={6}>6</button>
            <button className="Orange" onClick={hadlerOperator} value={"-"}>-</button>
+           </div>
+
+           <div className="row">
            <button className="gray" onClick={inputNum} value={1}>1</button>
            <button className="gray" onClick={inputNum} value={2}>2</button>
            <button className="gray" onClick={inputNum} value={3}>3</button>
            <button className="Orange" onClick={hadlerOperator} value={"+"}>+</button>
-           <button className="gray" onClick={inputNum} value={0}>0</button>
+           </div>
+
+           <div className="final">
+           <button className="gray" id="teste" onClick={inputNum} value={0}>0</button>
            <button className="gray" onClick={inputNum} value={"."}>,</button>
            <button className="Orange" onClick={calculate}>=</button>
+           </div>
         </div>
-        </Container>
         </div>
     )
 }

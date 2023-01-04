@@ -11,10 +11,26 @@ button {
 button:hover{
     cursor:pointer;
 }
+.all{
+    width: 350px;
+    height: 350px;
+
+}
 
 .wrapper{
     padding: 10px;
     background-color: black;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+}
+.final{
+    display: flex;
+    justify-content: center;
+    gap: 1px;
 }
 
 .Orange{
@@ -34,7 +50,16 @@ button:hover{
 .result {
     color: #fff;
     display: flex;
-    justify-content: flex-end;
-    margin-right: 1em;
+    justify-content:flex-end;
+    margin-right: 25px;
     font-size: 3.5em;
 }
+ #teste {
+    flex: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 30px;
+    font-size: 1.5em;
+
+ }
